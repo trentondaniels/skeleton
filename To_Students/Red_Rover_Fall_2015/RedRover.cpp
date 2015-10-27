@@ -1,18 +1,11 @@
-#pragma once
+#include <sstream>
 #include <vector>
 #include "Player.h"
 #include "RedRoverInterface.h"
 #include "LinkedList.h"
 using namespace std;
 
-class RedRover : public RedRoverInterface
-{
-private:
-	LinkedList<Player*> team1;
-	LinkedList<Player*> team2;
-	vector<Player*> Roster;
 
-public:
 	RedRover();
 	~RedRover();
 
@@ -38,27 +31,37 @@ public:
 	*
 	* Returns true if players were added to the roster, false otherwise
 	*/
-	bool addToRoster(string player_list);
+	bool addToRoster(string player_list) 
+	{
+		stringstream ss;
+		ss = player_list;
+		cout << ss << endl;
+		cout << player_list << endl;
+		string name;
+		int speed;
+		int strength;
+
+	}
 	/*
 	*getRosterSize()
 	*
 	* Returns the number of players in the roster.
 	*/
-	int getRosterSize();
+	int getRosterSize(){}
 
 	/*
 	*getTeamASize()
 	*
 	* Returns the number of players on Team A.
 	*/
-	int getTeamASize();
+	int getTeamASize(){}
 
 	/*
 	* getTeamBSize()
 	*
 	* Returns the number of players on Team B.
 	*/
-	int getTeamBSize();
+	int getTeamBSize(){}
 
 	/*
 	* getRoster()
@@ -72,8 +75,7 @@ public:
 	*
 	* Returns the string representation of the roster
 	*/
-	string getRoster();
-
+	string getRoster(){}
 	/*
 	* getTeamA()
 	* 
@@ -100,7 +102,7 @@ public:
 	*
 	* Returns the string representation of Team B
 	*/
-	string getTeamB();
+	string getTeamB(){}
 
 	/*
 	* rosterAt()
@@ -116,7 +118,7 @@ public:
 	* Returns a pointer to the player at the given index in Team A.
 	* Returns NULL if the index is out of range
 	*/
-	Player* teamAAt(int index);
+	Player* teamAAt(int index){}
 
 	/*
 	* teamBAt()
@@ -124,7 +126,7 @@ public:
 	* Returns a pointer to the player at the given index in Team B.
 	* Returns NULL if the index is out of range
 	*/
-	Player* teamBAt(int index);
+	Player* teamBAt(int index){}
 
 	/*
 	* shuffleRoster()
@@ -132,7 +134,7 @@ public:
 	* Shuffles the players in the roster
 	* Does not affect the players in Team A or Team B
 	*/
-	void shuffleRoster();
+	void shuffleRoster(){}
 
 	/*
 	* createTeams()
@@ -147,7 +149,7 @@ public:
 	*
 	* returns true if Team A and Team B are created successfully, false otherwise
 	*/
-	bool createTeams();
+	bool createTeams(){}
 
 	/*
 	* sendSomeoneOver()
@@ -174,7 +176,7 @@ public:
 	* 
 	* Empties both teams (does not affect the roster)
 	*/
-	void teamReset();
+	void teamReset(){}
 
 	/*
 	* rosterReset()
@@ -182,7 +184,7 @@ public:
 	* Empties all players from the roster
 	* (does nothing to Team A or Team B)
 	*/
-	void rosterReset();
+	void rosterReset(){}
 
 
 	/*
@@ -204,5 +206,4 @@ public:
 	*
 	* At the end of the game, print out the name of the winning team and the players on both teams.
 	*/
-	void autoPlay();
-};
+	void autoPlay(){}
